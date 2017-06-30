@@ -26,7 +26,7 @@ function Create_Token($apiUrl){
 	curl_close($curl);
 	//$result = json_decode($curl_response);	
 	if('OK' != $result['status']){
-		Ajout_Bouton("Je ne peux te répondre je ne sais pas qui tu es, je t'invite à te connecter sur ton compte Ogust :)",[["type" => "web_url","url" => "https://test.ogust.com/lancelot/login.php","title" =>"Connexion"]]);
+		Ajout_Bouton("Tu peux envoyer des messages à cette page. Cependant, si tu souhaites te connecter en tant qu'utilisateur, je t'invite à te connecter sur ton compte Ogust :)",[["type" => "web_url","url" => "https://test.ogust.com/lancelot/login.php","title" =>"Connexion"]]);
 		return 0;		
 		//die('Requete pour récupérer numéro de token échouée : '.$result['message']);	
 	}	
