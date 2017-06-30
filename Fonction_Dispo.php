@@ -1,10 +1,10 @@
 <?php
 
 function disponiblite($apiUrl,$token){
-	$ID=ID_searching($apiUrl,$token);
+	$ID = ID_searching($apiUrl,$token);
 
 	/*Gestion de la date*/
-	$Date=DayFormatting();
+	$Date = DayFormatting();
 
 	if($Date=="Incorrect" || $Date=="Passee" || $Date=="Impossible"){		
 		if($Date=="Incorrect") Ajout_Bouton("Format de la date incorrect :/",[["type" => "show_block","block_name" => "Menu","title" => "Menu"]]);
@@ -25,7 +25,9 @@ function disponiblite($apiUrl,$token){
 	}
 }
 
-//fonction permettant de mettre la date entrez par l'utilisateur au format adéquat
+//fonction permettant de mettre la date entrée par l'utilisateur au format adéquat
+
+
 function DayFormatting(){
 	$date=str_split($_POST["Date"]);
 

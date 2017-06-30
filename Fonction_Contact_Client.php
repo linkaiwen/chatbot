@@ -83,7 +83,7 @@ function Liste_client($apiUrl,$token){
 
 //Fonction permettant de trouver un client en fonction du numéro envoyé par l'utilisateur
 function Trouver_client($apiUrl,$token){
-	$date="@between|".date("Ymd", strtotime("-15 days"))."0000|".date("Ymd", strtotime("+15 days"))."2359";	
+	$date= "@between|".date("Ymd", strtotime("-15 days"))."0000|".date("Ymd", strtotime("+15 days"))."2359";
 	$result=DataSearching($apiUrl,$token,"search","service",["start_date" => $date]);
 
 	$nb_page=(int)($result["array_service"]["pagination"]["count"]/20)+1;

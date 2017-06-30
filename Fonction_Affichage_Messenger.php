@@ -2,7 +2,7 @@
 
 /*Fonction permettant d'afficher au format Json le texte en entrée*/
 
-/* pas plus de 5*/
+/* pas plus de 5 rename to format_messages*/
 /******** $messages est un tableau !!!********/
 function Affichage($messages){	
 
@@ -20,7 +20,7 @@ function Affichage($messages){
 
 }
 
-/*Fonction permettant de créer un bouton dans messenger*/
+/*Fonction permettant de créer un bouton dans messenger Rename to add_button */
 function Ajout_Bouton($texte,$boutons){
 	/*Structure bouton (3 boutons max):
 	Pour URL : ["type" => "web_url","url" => $URL,"title" =>"Voir"]
@@ -35,13 +35,4 @@ function Ajout_Bouton($texte,$boutons){
 	$mess = json_encode($arrMess);
 	print($mess);
 }
-
-
-
-
-
-
-
-
-
 ?>

@@ -97,7 +97,7 @@ function DateAffichage($Date_Start,$Date_End){
 //Verif
 /*Fonction permettant de renvoyer l'adresse d'un client*/
 function Customer_Adress($apiUrl,$token,$ID){
-	$result=DataSearching($apiUrl,$token,"get","customer",["id_customer"=>$ID]);
+	$result = DataSearching($apiUrl,$token,"get","customer",["id_customer"=>$ID]);
 	$info_client=["nom" => $result["customer"][0]["last_name"],"prenom" => $result["customer"][0]["first_name"],"line" => $result["customer"][0]["main_address"]["line"],"zip" => $result["customer"][0]["main_address"]["zip"],"city" => $result["customer"][0]["main_address"]["city"],"country" => $result["customer"][0]["main_address"]["country"]];
 	return $info_client;
 }
@@ -105,7 +105,7 @@ function Customer_Adress($apiUrl,$token,$ID){
 /*Fonction permettant de trier les services par ordre chronologique*/
 function Chronologique($Donnee_service){
 	$trie=True;	
-	for ($i=0;$i<count($Donnee_service)-1;$i++){ 
+	for ($i=0;$i < count($Donnee_service)-1;$i++){
 		for ($j=$i+1;$j<count($Donnee_service);$j++){
 			if(Compare_date($Donnee_service[$i]["Horaire_debut"],$Donnee_service[$j]["Horaire_debut"])==False){
 				$temp=$Donnee_service[$i];

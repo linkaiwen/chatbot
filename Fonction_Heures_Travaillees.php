@@ -43,20 +43,20 @@ function nb_heure($apiUrl,$token,$liste_ID_service,$ID_employee){
 		if($result["service"]["status"]=="R"){
 			$debut=str_split($result["service"]["start_date"]);
 			$fin=str_split($result["service"]["end_date"]);
-			$nbHeureRealisee=$nbHeureRealisee+60-intval($debut[10].$debut[11])+60*(intval($fin[8].$fin[9])-1-intval($debut[8].$debut[9]))+intval($fin[10].$fin[11]);
+			$nbHeureRealisee = $nbHeureRealisee+60-intval($debut[10].$debut[11])+60*(intval($fin[8].$fin[9])-1-intval($debut[8].$debut[9]))+intval($fin[10].$fin[11]);
 		}
 		/*Sinon on le compte comme heure non pointé*/
 		else if($result["service"]["status"]=="A"){
 			$debut=str_split($result["service"]["start_date"]);
 			$fin=str_split($result["service"]["end_date"]);
-			$nbHeurePasRealisee=$nbHeurePasRealisee+60-intval($debut[10].$debut[11])+60*(intval($fin[8].$fin[9])-1-intval($debut[8].$debut[9]))+intval($fin[10].$fin[11]);
+			$nbHeurePasRealisee = $nbHeurePasRealisee+60-intval($debut[10].$debut[11])+60*(intval($fin[8].$fin[9])-1-intval($debut[8].$debut[9]))+intval($fin[10].$fin[11]);
 		}
 
 	}
 	$mess="";
 	if($nbHeureRealisee%60<10) $mess=$mess.((int)($nbHeureRealisee/60)."h0".($nbHeureRealisee%60));
 	else $mess=$mess.((int)($nbHeureRealisee/60)."h".($nbHeureRealisee%60));
-	if($nbHeurePasRealisee!=0){
+	if($nbHeurePasRealisee !=0){
 		if($nbHeurePasRealisee%60<10) $mess=$mess." et il y a eu ".((int)($nbHeurePasRealisee/60)."h0".($nbHeurePasRealisee%60));
 		else $mess=$mess." et il y a eu ".((int)($nbHeurePasRealisee/60)."h".($nbHeurePasRealisee%60));
 		return $mess." non pointées (ou non réalisées)";
