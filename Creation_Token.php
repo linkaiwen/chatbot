@@ -2,7 +2,7 @@
 
 /*Fonction permettant de générer un token*/
 function Create_Token($apiUrl){
-	$Donnees=arrayDecrypte($_POST["ref"]);
+	$Donnees = arrayDecrypte($_POST["ref"]);
 	$payload = array(		
 		'login' => $Donnees["login"],		
 		'password' => $Donnees["pass"],		

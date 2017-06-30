@@ -142,7 +142,7 @@ function main(){
 	}
 		
 	else{
-		$result=DataSearching($apiUrl,$token,"get","information");
+		$result = DataSearching($apiUrl,$token,"get","information");
 		$texte="Bonjour ".$result["information"][0]["first_name"]." ,\n\nJe suis Ogust, le robot qui est là pour toi ! Tu peux me demander ce que tu veux j'essayerai d'y répondre !\n\nComment puis-je t'être utile  ? ;)\n\nN'hésites pas à me dire si tu as besoin d'aide en écrivant simplement \"aide\" ou \"help\" ;)";
 		$boutons=[["type" => "show_block","block_name" => "Bouton planning","title" => "Voir Planning"],["type" => "show_block","block_name" => "Bouton client","title" => "Informations Client"],["type" => "show_block","block_name" => "bouton autres","title" => "Autres"]];
 		Ajout_Bouton($texte,$boutons);
@@ -152,6 +152,4 @@ function main(){
 }
 
 main();
-
-?>
 

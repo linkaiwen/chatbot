@@ -1,7 +1,7 @@
 <?php
 
 /*methode=(get,set,rem,search)/objet=(customer,employee,service,etc)/param=(id_customer,last_name,etc)/valeur=(num_id,le vrai nom,etc)*/
-function DataSearching($apiUrl,$token,$methode,$objet,$paramvaleur){
+function DataSearching($apiUrl, $token, $methode, $objet, $paramvaleur = false){
 	$payload = ['token' => $token];
 	foreach ($paramvaleur as $key => $value) {
 		$payload[$key]=$value;

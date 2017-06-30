@@ -4,11 +4,11 @@
 /*Fonction permettant de récupérer l'heure, le lieu et le nom du client d'un service*/
 function Planning($apiUrl,$token){
 	/*On cherche l'ID de l'employé, puis on cherche la liste des services qui lui sont rattachés, puis on cherche les données de ces services (nom client, adresse, date)*/
-	$Donnee_service=Chronologique(Planning_service($apiUrl,$token,Service_Searching($apiUrl,$token,ID_searching($apiUrl,$token,"information"))));
+	$Donnee_service = Chronologique(Planning_service($apiUrl,$token,Service_Searching($apiUrl,$token,ID_searching($apiUrl,$token,"information"))));
 	/*Création du message en format Json*/
-	$cpt_global=0; //Sert à compter le nombre de message Json envoyé car 10 max
-	$cpt_message_temp=0; //Sert à compté le nombre de message dans un message Json envoyé, max 5
-	$cpt_nb_message=0; //Sert à compter le nombre de message dans les message Json envoyé
+	$cpt_global = 0; //Sert à compter le nombre de message Json envoyé car 10 max
+	$cpt_message_temp= 0; //Sert à compté le nombre de message dans un message Json envoyé, max 5
+	$cpt_nb_message = 0; //Sert à compter le nombre de message dans les message Json envoyé
 
 	$arrMess = ["messages" => []];
 	$message=""; //message dans un message
@@ -84,6 +84,7 @@ function Planning_service($apiUrl,$token,$liste_ID_service){
 }
 
 /*Fonction permettant d'afficher lisiblement une date de planning pour messenger*/
+/* TODO see if we could do simpler */
 function DateAffichage($Date_Start,$Date_End){
 	$tab_start=str_split($Date_Start);
 	$tab_end=str_split($Date_End);
@@ -119,6 +120,8 @@ function Chronologique($Donnee_service){
 }
 
 /*Fonction comparant deux dates et renvoyant True si $date1 < $date2*/
+
+/* TODO use Date obj */
 function Compare_date($date1,$date2){
 	$date1split=str_split($date1);
 	$date2split=str_split($date2);
